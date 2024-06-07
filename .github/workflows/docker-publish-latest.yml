@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - 'test/*' # my branch just for test
 jobs:
   call-base-docker-publish:
     uses: ./.github/workflows/base-docker-publish.yml

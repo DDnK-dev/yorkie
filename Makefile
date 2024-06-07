@@ -60,10 +60,14 @@ bench: ## runs benchmark tests
 	rm -f pipe
 
 docker: ## builds docker images with the current version and latest tag
-	docker buildx build --push --platform linux/amd64,linux/arm64,linux/386 -t yorkieteam/yorkie:$(YORKIE_VERSION) -t yorkieteam/yorkie:latest .
+	#docker buildx build --push --platform linux/amd64,linux/arm64,linux/386 -t yorkieteam/yorkie:$(YORKIE_VERSION) -t yorkieteam/yorkie:latest .
+	docker buildx build \
+		--push --platform linux/amd64 \
+		-t wdk1994/yorkie:$(YORKIE_VERSION) \
+		-t wdk1994/yorkie:latest .
 
 docker-latest: ## builds docker images with latest tag
-	docker buildx build --push --platform linux/amd64,linux/arm64,linux/386 -t yorkieteam/yorkie:latest .
+	docker buildx build --push --platform linux/amd64 -t wdk1994/yorkie:latest .
 
 swagger: ## runs swagger-ui with the yorkie api docs
 	docker run -p 3000:8080 \
