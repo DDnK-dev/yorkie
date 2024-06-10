@@ -20,6 +20,31 @@ import (
 	"os"
 )
 
+/*
+Document store for collaborative applications based on CRDT
+
+Usage:
+  yorkie [command]
+
+Available Commands:
+  completion  Generate the autocompletion script for the specified shell
+  context     Manage contexts
+  document    Manage documents
+  help        Help about any command
+  history     Show the history of a document
+  login       Log in to Yorkie server
+  logout      Log out from the Yorkie server
+  project     Manage projects
+  server      Start Yorkie server
+  version     Print the version number of Yorkie
+
+Flags:
+  -h, --help              help for yorkie
+      --rpc-addr string   Address of the rpc server (default "localhost:8080")
+
+Use "yorkie [command] --help" for more information about a command.
+*/
+
 func main() {
 	os.Exit(Run())
 }
